@@ -19,7 +19,7 @@ export function createArrayFromListNode<T>(head: ListNode<T> | null): T[] {
   if (!head) {
     return [];
   }
-  return createArrayFromListNode(head.next).concat([head.val!]);
+  return [head.val!, ...createArrayFromListNode(head.next)];
 }
 
 export class TreeNode<T = number> {
@@ -61,7 +61,7 @@ export function createTreeNode(values: (number | null)[]): TreeNode | null {
 
 export function areArraysEqual(array1: any, array2: any) {
   while (array1.length || array2.length) {
-    if (!array1.pop() === array2.pop()) {
+    if (array1.pop() !== array2.pop()) {
       return false;
     }
   }

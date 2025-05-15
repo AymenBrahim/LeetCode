@@ -7,8 +7,8 @@ import {
 } from "$/utils";
 // You can call reverseLinkedList here with manual or parsed input.
 const testCases = [
-  [createLinkedList([1, 2, 3, 4, 5]), [1, 2]],
-  [createLinkedList([5, 4, 3, 2, 1]), [2, 1]],
+  [createLinkedList([1, 2, 3, 4, 5]), [5, 4, 3, 2, 1]],
+  [createLinkedList([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5]],
 ] as const;
 
 describe("testing reverseLinkedList", () => {
