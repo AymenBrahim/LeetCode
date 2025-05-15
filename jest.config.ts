@@ -13,6 +13,8 @@ export default {
   },
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
+    "^\\$/(.*)$": "<rootDir>/$1",
   },
   modulePathIgnorePatterns: ["<rootDir>/\\.bun", "<rootDir>/\\$HOME"],
+  moduleDirectories: ["node_modules", "<rootDir>"],
 };
