@@ -7,6 +7,16 @@ export class ListNode<T = number> {
   }
 }
 
+export class _Node {
+  val: number;
+  neighbors: _Node[];
+
+  constructor(val?: number, neighbors?: _Node[]) {
+    this.val = val === undefined ? 0 : val;
+    this.neighbors = neighbors === undefined ? [] : neighbors;
+  }
+}
+
 export function createLinkedList<T>(array: T[]): ListNode<T> | null {
   if (!array.length) {
     return null;
