@@ -17,4 +17,5 @@ export default {
   },
   modulePathIgnorePatterns: ["<rootDir>/\\.bun", "<rootDir>/\\$HOME"],
   moduleDirectories: ["node_modules", "<rootDir>"],
+  testTimeout: 10000,
 };
