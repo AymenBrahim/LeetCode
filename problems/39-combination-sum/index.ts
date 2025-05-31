@@ -3,6 +3,48 @@ export function combinationSum(
   target: number
 ): number[][] {
   candidates = candidates.sort((a, b) => a - b);
+  const combo: number[] = [];
+  const result: number[][] = [];
+  calculateCombinations(0, 0, combo, result, candidates, target);
+  return result;
+}
+
+function calculateCombinations(
+  index: number,
+  sum: number,
+  combo: number[],
+  result: number[][],
+  candidates: number[],
+  target: number
+) {
+  if (index === candidates.length) {
+    return;
+  }
+
+  if (sum > target) {
+    return;
+  }
+
+  if (sum === target) {
+    result.push([...combo]);
+    return;
+  }
+
+  combo.push(candidates[index]);
+  calculateCombinations(
+    index,
+    sum + candidates[index],
+    combo,
+    result,
+    candidates,
+    target
+  );
+  combo.pop();
+  calculateCombinations(index + 1, sum, combo, result, candidates, target);
+}
+
+function getCombinationSum(candidates: number[], target: number): number[][] {
+  candidates = candidates.sort((a, b) => a - b);
   const combinations = new Array<number[][]>(target + 1).fill([]);
   const keys = new Array<string[]>(target + 1).fill([]);
 
